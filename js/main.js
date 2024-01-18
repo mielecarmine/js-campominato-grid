@@ -1,3 +1,6 @@
 const gridElement = document.getElementById("playground");
 const buttonElement = document.getElementById("playbutton");
-generateGrid(gridElement);
+buttonElement.addEventListener("click", function () {
+  gridElement.classList.add("bordered");
+  generateGrid(gridElement);
+});
