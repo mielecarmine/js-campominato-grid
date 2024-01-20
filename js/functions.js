@@ -1,20 +1,22 @@
 function generateGrid(container) {
+  container.innerHTML = "";
   for (let i = 0; i < 100; i++) {
-    const cellElement = generateCell();
+    const cellElement = generateCell(i);
     container.append(cellElement);
-    cellElement.append(i + 1);
   }
 }
 
-function generateCell() {
+function generateCell(number) {
   const cell = document.createElement("div");
   cell.classList.add("cell");
-  clickCell(cell);
+  cell.append(number + 1);
+  clickCell(cell, number);
   return cell;
 }
 
-function clickCell(element) {
+function clickCell(element, number) {
   element.addEventListener("click", function () {
     this.classList.toggle("active");
+    console.log(number);
   });
 }
